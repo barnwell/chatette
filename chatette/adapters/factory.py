@@ -6,6 +6,8 @@ Defines a factory method that allows to create an adapter from a string name.
 from chatette.adapters.jsonl import JsonListAdapter
 from chatette.adapters.rasa import RasaAdapter
 from chatette.adapters.rasa_md import RasaMdAdapter
+from chatette.adapters.qt import QtAdapter
+from chatette.adapters.aivc import AivcAdapter
 
 
 def create_adapter(adapter_name, base_filepath=None):
@@ -25,4 +27,8 @@ def create_adapter(adapter_name, base_filepath=None):
         return RasaMdAdapter(base_filepath)
     elif adapter_name == 'jsonl':
         return JsonListAdapter(base_filepath)
+    elif adapter_name == 'qt':
+        return QtAdapter(base_filepath)
+    elif adapter_name == 'aivc':
+        return AivcAdapter(base_filepath)
     raise ValueError("Unknown adapter was selected.")

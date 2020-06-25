@@ -76,7 +76,7 @@ def _add_optional_arguments(argument_parser):
         "-a", "--adapter", dest="adapter", required=False,
         type=str, default="rasa",
         help="Write adapter. " + \
-            "Possible values: ['rasa', 'rasamd' or 'rasa-md', 'jsonl']"
+            "Possible values: ['rasa', 'rasamd' or 'rasa-md', 'jsonl', 'qt', 'aivc']"
     )
     argument_parser.add_argument(
         "--base-file", dest="base_filepath",
