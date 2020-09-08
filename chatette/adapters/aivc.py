@@ -49,7 +49,7 @@ class AivcAdapter(Adapter):
 
         for intent_name in prepared_examples:
             output_file_handle.write(
-                "## " + cast_to_unicode(intent_name.split("--")[-1]) + " ##" + '\n'
+                "// " + cast_to_unicode(intent_name.split("--")[-1]) + " //" + '\n'
             )
             for text in prepared_examples[intent_name]:
                 # output_file_handle.write(cast_to_unicode(intent_name.split("--")[0].strip(" ") + ' ' + text + '\n'))
@@ -95,7 +95,7 @@ class AivcAdapter(Adapter):
         result = ""
         for syn_name in synonyms:
             if len(synonyms[syn_name]) > 1:
-                result += "## synonym:" + syn_name + '\n'
+                result += "// synonym:" + syn_name + '\n'
                 for syn in synonyms[syn_name]:
                     if syn != syn_name:
                         result += "- " + syn + '\n'
